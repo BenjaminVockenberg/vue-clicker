@@ -6,9 +6,9 @@
         <div class="container">
 
             <div class="score">
-                <p><strong>Score:</strong> {{ score / scoreReducer }} {{ scoreReducer > 1 ? 'M' : ''}}</p>
-                <p><strong>High-Score:</strong> {{ highscore / scoreReducer }} {{ scoreReducer > 1 ? 'M' : ''}}</p>
-                <p><strong>Multiplicator:</strong> {{ multiplicator / scoreReducer }} {{ scoreReducer > 1 ? 'M' : ''}}</p>
+                <p><strong>Score:</strong> {{ score >= 1000000 ? (score / scoreReducer).toFixed(2) : score }} {{ score > 1000000 ? 'M' : ''}}</p>
+                <p><strong>High-Score:</strong> {{ highscore >= 1000000 ? (highscore / scoreReducer).toFixed(2) : highscore }} {{ highscore > 1000000 ? 'M' : ''}}</p>
+                <p><strong>Multiplicator:</strong> {{ score >= 1000000 ? (multiplicator / scoreReducer).toFixed(2) : multiplicator }} {{ score > 1000000 ? 'M' : ''}}</p>
             </div>
 
             <div class="clickelement" @click="updateScore()" :style="{ padding: paddingFactor + '%' }">
@@ -36,6 +36,7 @@
             </div>
 
             <div class="clearfix"></div>
+
         </div>
 
     </div>
@@ -94,7 +95,7 @@ export default {
         * @desc updateing the progress bar
         **/
         updateProgress(value) {
-            return Math.round((((this.score * 100) / 100) - ((100 * this.multiplicator * value) / 100 )) / this.multiplicator / value);
+            return Math.round((((this.score * 100) / 100) - ((100 * this.multiplicator * value) / 100 )) / this.multiplicator / value).toFixed(2);
         },
         /**
         * @name cutScore
