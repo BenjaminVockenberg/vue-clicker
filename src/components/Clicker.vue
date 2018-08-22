@@ -16,6 +16,7 @@
             </div>
 
             <div class="actions">
+
                 <p>Multiplicator x2</p>
                 <div class="progress_border">
                     <div class="progress" :style="{ width: updateProgress(1) + '%'}"></div>
@@ -24,6 +25,7 @@
                 <div class="btn">
                     <button v-show="(score >= 100 * multiplicator)" type="button" name="double" @click="buymulti(2)">x2</button>
                 </div>
+
                 <p>Multiplicator x4</p>
                 <div class="progress_border">
                     <div class="progress" :style="{ width: updateProgress(4) + '%'}"></div>
@@ -31,6 +33,24 @@
                 <p>{{ updateProgress(4) }} %</p>
                 <div class="btn">
                     <button v-show="score >= 400 * multiplicator" type="button" name="quad" @click="buymulti(4)">x4</button>
+                </div>
+
+                <p>Multiplicator x16</p>
+                <div class="progress_border">
+                    <div class="progress" :style="{ width: updateProgress(16) + '%'}"></div>
+                </div>
+                <p>{{ updateProgress(16) }} %</p>
+                <div class="btn">
+                    <button v-show="score >= 1600 * multiplicator" type="button" name="quad" @click="buymulti(16)">x16</button>
+                </div>
+
+                <p>Multiplicator x256</p>
+                <div class="progress_border">
+                    <div class="progress" :style="{ width: updateProgress(256) + '%'}"></div>
+                </div>
+                <p>{{ updateProgress(256) }} %</p>
+                <div class="btn">
+                    <button v-show="score >= 256000 * multiplicator" type="button" name="quad" @click="buymulti(256)">x256</button>
                 </div>
 
             </div>
@@ -95,7 +115,7 @@ export default {
         * @desc updateing the progress bar
         **/
         updateProgress(value) {
-            return Math.round((((this.score * 100) / 100) - ((100 * this.multiplicator * value) / 100 )) / this.multiplicator / value).toFixed(2);
+            return ((((this.score * 100) / 100) - ((100 * this.multiplicator * value) / 100 )) / this.multiplicator / value).toFixed(2) < 0 ? 0 :((((this.score * 100) / 100) - ((100 * this.multiplicator * value) / 100 )) / this.multiplicator / value).toFixed(2);
         },
         /**
         * @name cutScore
@@ -191,14 +211,8 @@ export default {
                 }
             }
         }
-
     }
-
 }
-
-
-
-
 
 .clearfix {
     clear: both;
