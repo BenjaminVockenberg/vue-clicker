@@ -76,6 +76,7 @@ export default {
         }
     },
     methods : {
+
         /**
         * @name buymulti
         * @param mulit {number}
@@ -89,6 +90,7 @@ export default {
             this.multiplicator *= multi;
             this.updateProgress(multi);
         },
+
         /**
         * @name updateScore
         * @desc updating the score call highscore
@@ -99,6 +101,7 @@ export default {
             this.updatePadding();
             this.cutScore();
         },
+
         /**
         * @name updateHighScore
         * @desc updating the highscore
@@ -108,6 +111,7 @@ export default {
                 this.highscore = this.score;
             }
         },
+
         /**
         * @name updateProgress
         * @param value {number}
@@ -117,6 +121,7 @@ export default {
         updateProgress(value) {
             return ((((this.score * 100) / 100) - ((100 * this.multiplicator * value) / 100 )) / this.multiplicator / value).toFixed(2) < 0 ? 0 :((((this.score * 100) / 100) - ((100 * this.multiplicator * value) / 100 )) / this.multiplicator / value).toFixed(2);
         },
+
         /**
         * @name cutScore
         * @desc divides score by 1m to make it more readable
@@ -126,6 +131,7 @@ export default {
                 this.scoreReducer = 1000000;
             }
         },
+
         /**
         * @name updatePadding
         * @desc giving a visual feedback of clicking the clicker clickelement
@@ -138,6 +144,7 @@ export default {
                 }, 800);
             }
         }
+
     }
 }
 </script>
