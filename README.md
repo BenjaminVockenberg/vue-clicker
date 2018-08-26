@@ -26,5 +26,7 @@ Thats it. A simple game.
 
 ### Next Steps
 - breakdown app into components
-- implementing a test suit (Jest)
-- putting some more little visuals
+- implementing the jest test suit via vueUI
+- Adding more features
+-- more multiplicator options
+-- Badges or archievements 
