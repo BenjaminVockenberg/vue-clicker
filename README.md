@@ -16,7 +16,7 @@ npm run build
 ```
 
 ### What is this all about
-This ist just a little demo project about using vue and the CLI tool.
+This is just a little demo project about using Vue and the CLI tool.
 
 Click the Reservix-Logo as often as you can. You will get one point per click multiplied by the multiplier.
 

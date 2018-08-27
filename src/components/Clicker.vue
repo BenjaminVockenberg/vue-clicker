@@ -1,7 +1,7 @@
 <template>
 
     <div>
-        <h1>Reservix-Clicker</h1>
+        <h1>{{ msg }}</h1>
 
         <div class="container">
 
@@ -75,6 +75,7 @@ export default {
             multiplicator: 1
         }
     },
+    props : ['msg'],
     methods : {
 
         /**

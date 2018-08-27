@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Clicker msg="Welcome to Your Vue.js App"/>
+    <Clicker msg="Welcome to Reservix-Clicker 0.1.2"/>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: sans-serif;  
+  font-family: sans-serif;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
