@@ -55,6 +55,8 @@
 
             </div>
 
+            <button type="button" @click="getHighscore()">Restore Highscore</button>
+
             <div class="clearfix"></div>
 
         </div>
@@ -77,6 +79,21 @@ export default {
     },
     props : ['msg'],
     methods : {
+
+        storeHighscore() {
+            if (!localStorage.getItem('highscore')) {
+                localStorage.setItem('highscore', this.highscore);
+                return;
+            }
+            if (localStorage.getItem('highscore') <= this.highscore){
+                localStorage.setItem('highscore', this.highscore);
+                return;
+            }
+        },
+
+        getHighscore() {
+            this.highscore = localStorage.getItem('highscore');
+        },
 
         /**
         * @name buymulti
@@ -110,6 +127,7 @@ export default {
         updateHighScore() {
             if (this.score >= this.highscore) {
                 this.highscore = this.score;
+                this.storeHighscore();
             }
         },
 
