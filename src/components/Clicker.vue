@@ -80,6 +80,10 @@ export default {
     props : ['msg'],
     methods : {
 
+        /**
+         * @name storeHighscore
+         * @desc stores the Highscore to local storage if higher than current score
+         **/
         storeHighscore() {
             if (!localStorage.getItem('highscore')) {
                 localStorage.setItem('highscore', this.highscore);
@@ -91,6 +95,10 @@ export default {
             }
         },
 
+        /**
+         * @name getHighscore
+         * @desc Get the stored highscore
+         **/
         getHighscore() {
             this.highscore = localStorage.getItem('highscore');
         },
