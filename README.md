@@ -1,4 +1,4 @@
-# reservix-clicker
+# Reservix-Clicker
 
 ## Project setup
 ```
