@@ -30,3 +30,6 @@ Thats it. A simple game.
 - Adding more features
 -- more multiplicator options
 -- Badges or archievements 
+
+### Contact me  
+Twitter : @technokrat
